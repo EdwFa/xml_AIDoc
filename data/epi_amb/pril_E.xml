@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="AmbSum.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<!-- R [1..1] ТЕЛО ДОКУМЕНТА -->
+	<component>
+		<!-- R [1..1] Структурированное тело документа -->
+		<structuredBody>
+			<!-- R [1..1] СЕКЦИЯ: Общие данные об обращении (с кодированными элементами) -->
+			<component>
+				<section>
+					<!-- R [1..1] код секции -->
+					<code code="AMBS" codeSystem="1.2.643.5.1.13.13.11.1379" codeSystemVersion="1.2" codeSystemName="Секции CDA документов" displayName="Сведения амбулаторно-поликлинического обращения"/>
+					<!-- R [1..1] заголовок секции -->
+					<title>ОБРАЩЕНИЕ</title>
+					<!-- R [1..1] наполнение секции -->
+					<text>
+						<paragraph>
+							<caption>Шифр МКБ</caption>T23.2</paragraph>
+						<table width="100%">
+							<col width="10%"/>
+							<col width="20%"/>
+							<col width="10%"/>
+							<col width="20%"/>
+							<col width="15%"/>
+							<col width="25%"/>
+							<tbody>
+								<tr>
+									<th>Тип</th>
+									<th>Цель</th>
+									<th>Вид оплаты</th>
+									<th>Даты</th>
+									<th>Результат обращения</th>
+									<th>Выдано направление</th>
+								</tr>
+								<tr>
+									<td>повторное</td>
+									<td>по заболеванию</td>
+									<td>ОМС</td>
+									<td>c 8 Авг 2016 по 10 Окт 2016</td>
+									<td>Выздоровление</td>
+									<td>На санаторно-курортное лечение</td>
+								</tr>
+							</tbody>
+						</table>
+						<br/>
+						<table width="100%">
+							<caption>Предварительный диагноз:</caption>
+							<col width="10%"/>
+							<col width="20%"/>
+							<col width="70%"/>
+							<tbody>
+								<tr>
+									<th>Шифр</th>
+									<th>Тип</th>
+									<th>Текст</th>
+								</tr>
+								<tr>
+									<td>T23.2</td>
+									<td>Основное заболевание</td>
+									<td>
+										Термический ожог запястья и кисти второй степени<br/>
+										внешняя причина: Соприкосновение с горячей водой из крана (X11)
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<br/>
+						<table width="100%">
+							<caption>Заключительный диагноз:</caption>
+							<col width="10%"/>
+							<col width="20%"/>
+							<col width="70%"/>
+							<tbody>
+								<tr>
+									<th>Шифр</th>
+									<th>Тип</th>
+									<th>Текст</th>
+								</tr>
+								<tr>
+									<td>T23.2</td>
+									<td>Основное заболевание</td>
+									<td>
+										Термический ожог запястья и кисти второй степени<br/>
+										внешняя причина: Соприкосновение с горячей водой из крана (X11)<br/>
+										травма: прочая<br/>
+										заболевание: острое<br/>
+										диспансерное наблюдение: снят с выздоровлением<br/>
+									</td>
+								</tr>
+								<tr>
+									<td>J41.0</td>
+									<td>Сопутствующая патология</td>
+									<td>Простой хронический бронхит</td>
+								</tr>
+								<tr>
+									<td>N30.1</td>
+									<td>Сопутствующая патология</td>
+									<td>Интерстициальный цистит (хронический)</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<!-- R [1..1] Случай оказания медицинской помощи -->
+					<entry>
+						<encounter classCode="ENC" moodCode="EVN">
+							<!-- R [1..1] Уникальный идентификатор случая оказания медицинской помощи (незначащий уникальный идентификатор, номер талона) -->
+							<id root="1.2.643.5.1.13.13.12.2.77.7973.100.1.1.15" extension="908964234678"/>
+							<!-- R [1..1] Даты случая -->
+							<effectiveTime>
+								<!-- R [1..1] Дата открытия обращения -->
+								<low value="201608080707+0300"/>
+								<!-- R [1..1] Дата закрытия обращения -->
+								<high value="201610100909+0300"/>
+							</effectiveTime>
+							<!-- R [1..1] Кодирование порядка обращения -->
+							<entryRelationship typeCode="SUBJ" inversionInd="true">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- R [1..1] Порядок обращения -->
+									<code code="2" codeSystem="1.2.643.5.1.13.13.11.1007" codeSystemVersion="2.1" codeSystemName="Порядок случаев госпитализации или обращения" displayName="Повторный"/>
+								</observation>
+							</entryRelationship>
+							<!-- R [1..1] Кодирование шифра МКБ данного случая -->
+							<entryRelationship typeCode="REFR" inversionInd="false">
+								<act classCode="ACT" moodCode="EVN">
+									<!-- R [1..1] Шифр МКБ данного случая -->
+									<code code="T23.2" codeSystem="1.2.643.5.1.13.13.11.1005" codeSystemVersion="2.4" codeSystemName="Международная классификация болезней и состояний, связанных со здоровьем 10 пересмотра. Версия 4" displayName="Термический ожог запястья и кисти второй степени"/>
+								</act>
+							</entryRelationship>
+						</encounter>
+					</entry>
+					<!-- [0..1] Кодирование результата обращения -->
+					<entry>
+						<observation classCode="OBS" moodCode="EVN">
+							<!-- R [1..1] Результат обращения -->
+							<code code="1" codeSystem="1.2.643.5.1.13.13.11.1046" codeSystemVersion="2.1" codeSystemName="Результаты обращения (госпитализации)" displayName="Выздоровление"/>
+						</observation>
+					</entry>
+					<!-- [0..1] Кодирование направления по завершению обращения -->
+					<entry>
+						<observation classCode="OBS" moodCode="EVN">
+							<!-- R [1..1] Направление -->
+							<code code="7" codeSystem="1.2.643.5.1.13.13.11.1009" codeSystemVersion="1.1" codeSystemName="Справочник видов медицинских направлений" displayName="На санаторно-курортное лечение"/>
+						</observation>
+					</entry>
+					<!-- R [1..1] Кодирование вида оплаты -->
+					<entry>
+						<observation classCode="OBS" moodCode="EVN">
+							<!-- R [1..1] Вид оплаты -->
+							<code code="1" codeSystem="1.2.643.5.1.13.13.11.1039" codeSystemVersion="2.1" codeSystemName="Источники оплаты медицинской помощи" displayName="ОМС"/>
+						</observation>
+					</entry>
+					<!-- [0..1] Кодирование вида оказанной медицинской помощи в рамках обращения -->
+					<entry>
+						<observation classCode="OBS" moodCode="EVN">
+							<!-- R [1..1] Вид медицинской помощи -->
+							<code code="3" codeSystem="1.2.643.5.1.13.13.11.1034" codeSystemVersion="2.1" codeSystemName="Виды медицинской помощи" displayName="Первичная специализированная медицинская помощь"/>
+						</observation>
+					</entry>
+					<!-- [0..1] Кодирование предварительного диагноза -->
+					<entry>
+						<act classCode="ACT" moodCode="EVN">
+							<!-- R [1..1] Степень обоснованности диагноза -->
+							<code code="1" codeSystem="1.2.643.5.1.13.13.11.1076" codeSystemVersion="1.2" codeSystemName="Степень обоснованности диагноза" displayName="Предварительный диагноз"/>
+							<!-- R [1..*] Кодирование основного предварительного диагноза -->
+							<entryRelationship typeCode="COMP">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- R [1..1] Кодирование вида нозологической единицы диагноза -->
+									<code code="1" codeSystem="1.2.643.5.1.13.13.11.1077" codeSystemVersion="1.2" displayName="Основное заболевание" codeSystemName="Виды нозологических единиц диагноза"/>
+									<!-- [0..1] Врачебное описание нозологической единицы -->
+									<text>Термический ожог запястья и кисти второй степени</text>
+									<!-- R [1..1] Основное заболевание -->
+									<value xsi:type="CD" code="T23.2" codeSystem="1.2.643.5.1.13.13.11.1005" codeSystemVersion="2.4" codeSystemName="Международная классификация болезней и состояний, связанных со здоровьем 10 пересмотра. Версия 4" displayName="Термический ожог запястья и кисти второй степени"/>
+									<!-- [0..1] Уточнение внешней причины -->
+									<entryRelationship typeCode="CAUS" inversionInd="true">
+										<act classCode="ACT" moodCode="EVN">
+											<!-- R [1..1] Внешняя причина заболевания -->
+											<code code="X11" codeSystem="1.2.643.5.1.13.13.11.1005" codeSystemVersion="2.4" codeSystemName="Международная классификация болезней и состояний, связанных со здоровьем 10 пересмотра. Версия 4" displayName="Соприкосновение с горячей водой из крана"/>
+										</act>
+									</entryRelationship>
+								</observation>
+							</entryRelationship>
+							<!-- [0..*] Кодирование осложнения предварительного диагноза -->
+							<!-- [0..*] Кодирование сопутствующей патологии предварительного диагноза -->
+						</act>
+					</entry>
+					<!-- [0..1] Кодирование заключительного диагноза -->
+					<entry>
+						<act classCode="ACT" moodCode="EVN">
+							<!-- R [1..1] Степень обоснованности диагноза -->
+							<code code="3" codeSystem="1.2.643.5.1.13.13.11.1076" codeSystemVersion="1.2" codeSystemName="Степень обоснованности диагноза" displayName="Заключительный клинический диагноз"/>
+							<!-- R [1..*] Кодирование основного заключительного диагноза -->
+							<entryRelationship typeCode="COMP">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- R [1..1] Кодирование вида нозологической единицы диагноза -->
+									<code code="1" codeSystem="1.2.643.5.1.13.13.11.1077" codeSystemVersion="1.2" displayName="Основное заболевание" codeSystemName="Виды нозологических единиц диагноза"/>
+									<!-- [0..1] Врачебное описание нозологической единицы -->
+									<text>Термический ожог запястья и кисти второй степени</text>
+									<!-- R [1..1] Основное заболевание -->
+									<value xsi:type="CD" code="T23.2" codeSystem="1.2.643.5.1.13.13.11.1005" codeSystemVersion="2.4" codeSystemName="Международная классификация болезней и состояний, связанных со здоровьем 10 пересмотра. Версия 4" displayName="Термический ожог запястья и кисти второй степени"/>
+									<!-- [0..1] Уточнение внешней причины -->
+									<entryRelationship typeCode="CAUS" inversionInd="true">
+										<act classCode="ACT" moodCode="EVN">
+											<!-- R [1..1] Внешняя причина -->
+											<code code="X11" codeSystem="1.2.643.5.1.13.13.11.1005" codeSystemVersion="2.4" codeSystemName="Международная классификация болезней и состояний, связанных со здоровьем 10 пересмотра. Версия 4" displayName="Соприкосновение с горячей водой из крана"/>
+										</act>
+									</entryRelationship>
+									<!-- [0..1] Уточнение вида травмы -->
+									<entryRelationship typeCode="REFR" inversionInd="false">
+										<act classCode="ACT" moodCode="EVN">
+											<!-- R [1..1] Вид травмы -->
+											<code code="14" codeSystem="1.2.643.5.1.13.13.11.1036" codeSystemVersion="2.1" codeSystemName="Виды травм по способу получения" displayName="Прочие"/>
+										</act>
+									</entryRelationship>
+									<!-- [0..1] Уточнение характера заболевания -->
+									<entryRelationship typeCode="SUBJ" inversionInd="true">
+										<act classCode="ACT" moodCode="EVN">
+											<!-- R [1..1] Характер заболевания -->
+											<code code="3" codeSystem="1.2.643.5.1.13.13.11.1049" codeSystemVersion="2.1" codeSystemName="Характер заболевания" displayName="Острое"/>
+										</act>
+									</entryRelationship>
+									<!-- [0..1] Уточнение статуса диспансерного наблюдения -->
+									<entryRelationship typeCode="SUBJ" inversionInd="true">
+										<act classCode="ACT" moodCode="EVN">
+											<!-- R [1..1] Статус диспансерного наблюдения -->
+											<code code="3" codeSystem="1.2.643.5.1.13.13.11.1047" codeSystemVersion="2.1" codeSystemName="Статусы диспансерного наблюдения" displayName="Снят"/>
+											<!-- [0..1] Уточнение причины снятия с диспансерного учёта -->
+											<entryRelationship typeCode="RSON" inversionInd="false">
+												<act classCode="ACT" moodCode="EVN">
+													<!-- R [1..1] Причина снятия с диспансерного учёта -->
+													<code code="1" codeSystem="1.2.643.5.1.13.13.11.1045" codeSystemVersion="3.1" codeSystemName="Причины снятия с диспансерного учета" displayName="Выздоровление"/>
+												</act>
+											</entryRelationship>
+										</act>
+									</entryRelationship>
+								</observation>
+							</entryRelationship>
+							<!-- [0..*] Кодирование осложнения заключительного диагноза -->
+							<!-- [0..*] Кодирование сопутствующей патологии заключительного диагноза -->
+							<entryRelationship typeCode="COMP">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- R [1..1] Кодирование вида нозологической единицы диагноза -->
+									<code code="3" codeSystem="1.2.643.5.1.13.13.11.1077" codeSystemVersion="1.2" displayName="Сопутствующее заболевание" codeSystemName="Виды нозологических единиц диагноза"/>
+									<!-- [0..1] Врачебное описание нозологической единицы -->
+									<text>Простой хронический бронхит</text>
+									<!-- R [1..1] Сопутствующая патология -->
+									<value xsi:type="CD" code="J41.0" codeSystem="1.2.643.5.1.13.13.11.1005" codeSystemVersion="2.4" codeSystemName="Международная классификация болезней и состояний, связанных со здоровьем 10 пересмотра. Версия 4" displayName="Простой хронический бронхит"/>
+								</observation>
+							</entryRelationship>
+							<!-- [0..*] Кодирование сопутствующей патологии заключительного диагноза -->
+							<entryRelationship typeCode="COMP">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- R [1..1] Кодирование вида нозологической единицы диагноза -->
+									<code code="3" codeSystem="1.2.643.5.1.13.13.11.1077" codeSystemVersion="1.2" displayName="Сопутствующее заболевание" codeSystemName="Виды нозологических единиц диагноза"/>
+									<!-- [0..1] Врачебное описание нозологической единицы -->
+									<text>Термический ожог запястья и кисти второй степени</text>
+									<!-- R [1..1] Сопутствующая патология -->
+									<value xsi:type="CD" code="N30.1" codeSystem="1.2.643.5.1.13.13.11.1005" codeSystemVersion="2.4" codeSystemName="Международная классификация болезней и состояний, связанных со здоровьем 10 пересмотра. Версия 4" displayName="Интерстициальный цистит (хронический)"/>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

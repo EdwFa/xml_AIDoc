@@ -1,0 +1,1695 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="AmbSum.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+	<!-- R [1..1] ДАННЫЕ О ПАЦИЕНТЕ -->
+	<recordTarget>
+		<!-- R [1..1] ПАЦИЕНТ (роль) -->
+		<patientRole>
+			<!-- [1..1] Адрес пациента -->
+			<addr use="H">
+				<!-- R [1..1] Регион РФ -->
+				<state>77</state>
+			<patient>
+				<!-- R [1..1] Пол пациента -->
+				<administrativeGenderCode code="2" codeSystem="1.2.643.5.1.13.13.11.1040" codeSystemVersion="2.1" codeSystemName="Пол пациента" displayName="Женский"/>
+				<!-- R [1..1] Дата рождения -->
+				<birthTime value="19590331"/>
+			</patient>
+			<!-- R [1..1] Организация (ЛПУ или его филиал), оказавшая медицинскую помощь -->
+			<providerOrganization>
+				<!-- R [1..1] Идентификатор организации -->
+				<id root="1.2.643.5.1.13.13.12.2.77.7973"/>
+				<!-- R [1..1] Наименование организации -->
+				<name>ГБУЗ "ГП №180 ДЗМ" Филиал №1</name>
+				<!-- [1..1] Адрес организации -->
+				<addr>
+					<!-- R [1..1] адрес текстом -->
+					<streetAddressLine>123181, г. Москва, ул. Кулакова, д. 23</streetAddressLine>
+					<!-- R [1..1] Регион РФ -->
+					<state>77</state>
+				</addr>
+			</providerOrganization>
+		</patientRole>
+	</recordTarget>
+	<!-- R [1..1] ТЕЛО ДОКУМЕНТА -->
+	<component>
+		<!-- R [1..1] Структурированное тело документа -->
+		<structuredBody>
+			
+			<!-- [0..1] СЕКЦИЯ: Социальный анамнез (с кодированными элементами) -->
+			<component>
+				<section>
+					<!-- R [1..1] код секции -->
+					<code code="SOCANAM" codeSystem="1.2.643.5.1.13.13.11.1379" codeSystemVersion="1.2" codeSystemName="Секции CDA документов" displayName="Социальный анамнез"/>
+					<!-- R [1..1] заголовок секции -->
+					<title>Социальный анамнез</title>
+					<!-- R [1..1] наполнение секции -->
+					<text>
+						<list listType="unordered">
+							<caption>Занятость</caption>
+							<item>
+								<content ID="socanam6">Работает</content> в «ООО Организация» в должности «Менеджер»</item>
+						</list>
+						<list listType="unordered" ID="priveleges">
+							<caption>Льготная категория</caption>
+							<item>
+								<content ID="socanam1">Почетные доноры</content> (до 02.02.2017)</item>
+							<item>
+								<content ID="socanam2">Сотрудники подразделений особого риска</content> (до 12.12.2016)</item>
+						</list>
+						<list listType="unordered" ID="invalid">
+							<caption>Инвалидность</caption>
+							<item>
+								<content ID="socanam3">Инвалиды I группы</content> (инвалид с детства)<br/>установлена: Впервые</item>
+						</list>
+						<list listType="unordered">
+							<caption>Социальные факторы и профессиональные вредности</caption>
+							<item>
+								<content ID="socanam4">Нарушение режима сна и бодрствования</content>
+							</item>
+							<item>
+								<content ID="socanam5">Тяжелый и напряженный физический труд</content>
+							</item>
+						</list>
+						<list>
+							<caption>Зависимости</caption>
+							<item>
+								<content ID="addic1">Курение</content>
+							</item>
+							<item>
+								<content ID="addic2">Телевизионная зависимость</content>
+							</item>
+							<item>
+								<content ID="addic3">Интернет-зависимость</content>
+							</item>
+						</list>
+						<paragraph>
+							<caption>Эпидемиологический Социальный анамнез</caption>Контактов с инфекционными больными за время обращения не было.<br/>
+								В эндемичных районах тех или иных инфекций, загрязнённых радиацией и химикатами территориях, за время обращения не находился.</paragraph>
+					</text>
+					<!-- [0..*] Кодирование льготной категории -->
+					<entry>
+						<observation classCode="OBS" moodCode="EVN">
+							<!-- R [1..1] Льготная категория -->
+							<code code="9752" codeSystem="1.2.643.5.1.13.13.11.1050" codeSystemVersion="1.2" codeSystemName="Льготные категории населения" displayName="Почетные доноры">
+								<!-- [0..1] Ссылка на фрагмент текстовой части секции -->
+								<originalText>
+									<reference value="#socanam1"/>
+								</originalText>
+							</code>
+							<!-- R [1..1] Дата\время действия льготы -->
+							<effectiveTime>
+								<!-- [1..1]  Дата\время начала действия льготы -->
+								<low value="20160202"/>
+								<!-- [1..1]  Дата\время начала действия льготы -->
+								<high value="20170202"/>
+							</effectiveTime>
+						</observation>
+					</entry>
+					<!-- [0..*] Кодирование льготной категории -->
+					<entry>
+						<observation classCode="OBS" moodCode="EVN">
+							<!-- R [1..1] Льготная категория -->
+							<code code="6731" codeSystem="1.2.643.5.1.13.13.11.1050" codeSystemVersion="1.2" codeSystemName="Льготные категории населения" displayName="Сотрудники подразделений особого риска">
+								<!-- [0..1] Ссылка на фрагмент текстовой части секции -->
+								<originalText>
+									<reference value="#socanam2"/>
+								</originalText>
+							</code>
+							<!-- R [1..1] Дата\время действия льготы -->
+							<effectiveTime>
+								<!-- [1..1]  Дата\время начала действия льготы -->
+								<low value="20150202"/>
+								<!-- [1..1]  Дата\время начала действия льготы -->
+								<high value="20161212"/>
+							</effectiveTime>
+						</observation>
+					</entry>
+					<!-- [0..1] Кодирование инвалидности -->
+					<entry>
+						<observation classCode="OBS" moodCode="EVN">
+							<!-- R [1..1] Инвалидность -->
+							<code code="1" codeSystem="1.2.643.5.1.13.13.11.1053" codeSystemVersion="2.2" codeSystemName="Группы инвалидности" displayName="1 группа">
+								<!-- [0..1] Ссылка на фрагмент текстовой части секции -->
+								<originalText>
+									<reference value="#socanam3"/>
+								</originalText>
+								<!-- [0..1] Уточнение порядка установления инвалидности -->
+								<qualifier>
+									<!-- R [1..1] Порядок установления инвалидности -->
+									<value code="1" codeSystem="1.2.643.5.1.13.13.11.1041" codeSystemVersion="1.1" codeSystemName="Порядок установления инвалидности" displayName="Впервые"/>
+								</qualifier>
+							</code>
+							<!-- R [1..1] Дата\время установления инвалидности -->
+							<effectiveTime>
+								<!-- [1..1]  Дата\время установления инвалидности -->
+								<low value="19610331"/>
+							</effectiveTime>
+						</observation>
+					</entry>
+					<!-- [0..*] Кодирование потенциально-опасных для здоровья социальных факторов -->
+					<entry>
+						<observation classCode="OBS" moodCode="EVN">
+							<!-- R [1..1] Потенциально-опасный для здоровья социальный фактор -->
+							<code code="14" codeSystem="1.2.643.5.1.13.13.11.1059" codeSystemVersion="1.2" codeSystemName="Потенциально-опасные для здоровья социальные факторы" displayName="Нарушение режима сна и бодрствования">
+								<!-- [0..1] Ссылка на фрагмент текстовой части секции -->
+								<originalText>
+									<reference value="#socanam4"/>
+								</originalText>
+							</code>
+						</observation>
+					</entry>
+					<!-- [0..*] Кодирование профессиональных вредностей -->
+					<entry>
+						<observation classCode="OBS" moodCode="EVN">
+							<!-- R [1..1] Профессиональная вредность -->
+							<code code="589" codeSystem="1.2.643.5.1.13.13.11.1060" codeSystemVersion="1.2" codeSystemName="Профессиональные вредности для учета сигнальной информации о пациенте" displayName="Тяжелый и напряженный физический труд">
+								<!-- [0..1] Ссылка на фрагмент текстовой части секции -->
+								<originalText>
+									<reference value="#socanam5"/>
+								</originalText>
+							</code>
+						</observation>
+					</entry>
+					<!-- [0..1] Кодирование местности регистрации -->
+					<entry>
+						<observation classCode="OBS" moodCode="EVN">
+							<!-- R [1..1] Местность регистрации -->
+							<code code="1" codeSystem="1.2.643.5.1.13.13.11.1042" codeSystemVersion="2.1" codeSystemName="Признак жителя города или села" displayName="Город"/>
+						</observation>
+					</entry>
+					<!-- [0..1] Кодирование занятости -->
+					<entry>
+						<observation classCode="OBS" moodCode="EVN">
+							<!-- R [1..1] Занятость -->
+							<code code="5" codeSystem="1.2.643.5.1.13.13.11.1038" codeSystemVersion="2.1" codeSystemName="Занятость (социальные группы) населения" displayName="Работает">
+								<!-- [0..1] Ссылка на фрагмент текстовой части секции -->
+								<originalText>
+									<reference value="#socanam6"/>
+								</originalText>
+							</code>
+							<!-- [1..1] Текстовое описание занятости (место и должность работы) -->
+							<text>Работает в «ООО Организация» в должности «Менеджер»</text>
+						</observation>
+					</entry>
+					<!-- [0..*] Кодирование вредных привычек и зависимостей -->
+					<entry>
+						<observation classCode="OBS" moodCode="EVN">
+							<!-- R [1..1] Вредная привычка или зависимость -->
+							<code code="1" codeSystem="1.2.643.5.1.13.13.11.1058" codeSystemVersion="1.2" codeSystemName="Вредные привычки и зависимости" displayName="Курение">
+								<!-- [0..1] Ссылка на фрагмент текстовой части секции -->
+								<originalText>
+									<reference value="#addic1"/>
+								</originalText>
+							</code>
+						</observation>
+					</entry>
+					<!-- [0..*] Кодирование вредных привычек и зависимостей -->
+					<entry>
+						<observation classCode="OBS" moodCode="EVN">
+							<!-- R [1..1] Вредная привычка или зависимость -->
+							<code code="9" codeSystem="1.2.643.5.1.13.13.11.1058" codeSystemVersion="1.2" codeSystemName="Вредные привычки и зависимости" displayName="Телевизионная зависимость">
+								<!-- [0..1] Ссылка на фрагмент текстовой части секции -->
+								<originalText>
+									<reference value="#addic2"/>
+								</originalText>
+							</code>
+						</observation>
+					</entry>
+					<!-- [0..*] Кодирование вредных привычек и зависимостей -->
+					<entry>
+						<observation classCode="OBS" moodCode="EVN">
+							<!-- R [1..1] Вредная привычка или зависимость -->
+							<code code="10" codeSystem="1.2.643.5.1.13.13.11.1058" codeSystemVersion="1.2" codeSystemName="Вредные привычки и зависимости" displayName="Интернет-зависимость">
+								<!-- [0..1] Ссылка на фрагмент текстовой части секции -->
+								<originalText>
+									<reference value="#addic3"/>
+								</originalText>
+							</code>
+						</observation>
+					</entry>
+				</section>
+			</component>
+			<!-- [0..1] СЕКЦИЯ: Сведения амбулаторно-поликлинического посещения (с кодированными элементами) -->
+			<component>
+				<section>
+					<!-- R [1..1] код секции -->
+					<code code="AMBSV" codeSystem="1.2.643.5.1.13.13.11.1379" codeSystemVersion="1.2" codeSystemName="Секции CDA документов" displayName="Сведения амбулаторно-поликлинического посещения"/>
+					<!-- R [1..1] заголовок секции -->
+					<title>ПОСЕЩЕНИЯ</title>
+					<!-- R [1..1] наполнение секции -->
+					<text>
+						<table width="100%">
+							<col width="5%"/>
+							<col width="10%"/>
+							<col width="15%"/>
+							<col width="30%"/>
+							<col width="15%"/>
+							<col width="20%"/>
+							<tbody>
+								<tr>
+									<th>Дата</th>
+									<th>Врач</th>
+									<th>Жалобы пациента</th>
+									<th>Объективно</th>
+									<th>Рекомендовано</th>
+								</tr>
+								<tr>
+									<td>08.08.2016</td>
+									<td>Врач-хирург</td>
+									<td>На сильную боль в правой кисти.</td>
+									<td>На II-III пальцах правой кисти имеются ожоговые раны до 2,0 см без отделяемого, с активной краевой и островковой эпителизацией. Признаков перифокального воспаления нет.</td>
+									<td>Холтеровское мониторирование сердечного ритма<br/>Общий (клинический) анализ крови</td>
+								</tr>
+								<tr>
+									<td>02.10.2016</td>
+									<td>Врач-хирург</td>
+									<td>На умеренную боль в правой кисти.</td>
+									<td>Без изменений.</td>
+									<td>Иммуногистохимическое исследование материала.</td>
+								</tr>
+								<tr>
+									<td>10.10.2016</td>
+									<td>Врач-хирург<br/>Привалов А.И.</td>
+									<td>Отсутствуют.</td>
+									<td>Признаков перифокального воспаления нет.</td>
+									<td>Санаторно-курортное лечение.</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<!-- [0..*] Кодирование посещений -->
+					<entry>
+						<!-- R [1..1] Посещение -->
+						<encounter classCode="ENC" moodCode="EVN">
+							<!-- R [1..1] Дата посещения -->
+							<effectiveTime>
+								<!-- R [1..1] Дата начала посещения -->
+								<low value="201608080707+0300"/>
+								<!-- R [1..1] Дата окончания посещения -->
+								<high value="201608080737+0300"/>
+							</effectiveTime>
+							<!-- R [1..*] Кодирование оказанных услуг -->
+							<entryRelationship typeCode="REFR" inversionInd="false">
+								<act classCode="ACT" moodCode="EVN">
+									<!-- R [1..1] Оказанная услуга -->
+									<code code="B01.057.001" codeSystem="1.2.643.5.1.13.13.11.1070" codeSystemVersion="2.2" codeSystemName="Номенклатура медицинских услуг" displayName="Прием (осмотр, консультация) врача-хирурга первичный"/>
+									<!-- R [1..1] Дата и время оказания услуги -->
+									<effectiveTime value="201608080707+0300"/>
+								</act>
+							</entryRelationship>
+							<!-- [0..1] Описание результатов посещения: Кодирование жалоб -->
+							<entryRelationship typeCode="REFR" inversionInd="false">
+								<observation classCode="OBS" moodCode="INT">
+									<!-- R [1..1] Раздел описания результатов посещения -->
+									<code code="835" codeSystem="1.2.643.5.1.13.13.11.1380" codeSystemVersion="1.1" codeSystemName="Кодируемые поля CDA документов" displayName="Жалобы пациента"/>
+									<!-- R [1..1] Жалобы -->
+									<value xsi:type="ST">На сильную боль в правой кисти.</value>
+								</observation>
+							</entryRelationship>
+							<!-- [0..1] Описание результатов посещения: Объективные данные -->
+							<entryRelationship typeCode="REFR" inversionInd="false">
+								<observation classCode="OBS" moodCode="INT">
+									<!-- R [1..1] Раздел описания результатов посещения -->
+									<code code="836" codeSystem="1.2.643.5.1.13.13.11.1380" codeSystemVersion="1.1" codeSystemName="Кодируемые поля CDA документов" displayName="Объективные данные"/>
+									<!-- R [1..1] Объективные данные-->
+									<value xsi:type="ST">На II-III пальцах правой кисти имеются ожоговые раны до 2,0 см без отделяемого, с активной краевой и островковой эпителизацией. Признаков перифокального воспаления нет.</value>
+								</observation>
+							</entryRelationship>
+							<!-- [0..1] Описание результатов посещения: Кодирование рекомендаций -->
+							<entryRelationship typeCode="REFR" inversionInd="false">
+								<observation classCode="OBS" moodCode="INT">
+									<!-- R [1..1] Раздел описания результатов посещения -->
+									<code code="839" codeSystem="1.2.643.5.1.13.13.11.1380" codeSystemVersion="1.1" codeSystemName="Кодируемые поля CDA документов" displayName="Рекомендовано"/>
+									<!-- R [1..1] Рекомендации -->
+									<value xsi:type="ST">Холтеровское мониторирование сердечного ритма. Общий (клинический) анализ крови</value>
+								</observation>
+							</entryRelationship>
+						</encounter>
+					</entry>
+					<!-- [0..*] Кодирование посещений -->
+					<entry>
+						<!-- R [1..1] Посещение -->
+						<encounter classCode="ENC" moodCode="EVN">
+							<!-- R [1..1] Дата посещения -->
+							<effectiveTime>
+								<!-- R [1..1] Дата начала посещения -->
+								<low value="201610021410+0300"/>
+								<!-- R [1..1] Дата окончания посещения -->
+								<high value="201610021445+0300"/>
+							</effectiveTime>
+							<!-- R [1..*] Кодирование оказанных услуг -->
+							<entryRelationship typeCode="REFR" inversionInd="false">
+								<!-- R [1..1] Кодирование оказанной услуги -->
+								<act classCode="ACT" moodCode="EVN">
+									<!-- R [1..1] Оказанная услуга -->
+									<code code="B01.057.002" codeSystem="1.2.643.5.1.13.13.11.1070" codeSystemVersion="2.2" codeSystemName="Номенклатура медицинских услуг" displayName="Прием (осмотр, консультация) врача-хирурга повторный"/>
+									<!-- R [1..1] Дата и время оказания услуги -->
+									<effectiveTime value="201610021410+0300"/>
+								</act>
+							</entryRelationship>
+							<!-- R [1..*] Кодирование оказанных услуг -->
+							<entryRelationship typeCode="REFR" inversionInd="false">
+								<!-- R [1..1] Кодирование оказанной услуги -->
+								<act classCode="ACT" moodCode="EVN">
+									<!-- R [1..1] Оказанная услуга -->
+									<code code="A16.01.004" codeSystem="1.2.643.5.1.13.13.11.1070" codeSystemVersion="2.2" codeSystemName="Номенклатура медицинских услуг" displayName="Хирургическая обработка раны или инфицированной ткани"/>
+									<!-- R [1..1] Дата и время оказания услуги -->
+									<effectiveTime value="201610021410+0300"/>
+								</act>
+							</entryRelationship>
+							<!-- [0..1] Описание результатов посещения: Кодирование жалоб -->
+							<entryRelationship typeCode="REFR" inversionInd="false">
+								<observation classCode="OBS" moodCode="INT">
+									<!-- R [1..1] Раздел описания результатов посещения -->
+									<code code="835" codeSystem="1.2.643.5.1.13.13.11.1380" codeSystemVersion="1.1" codeSystemName="Кодируемые поля CDA документов" displayName="Жалобы пациента"/>
+									<!-- R [1..1] Жалобы -->
+									<value xsi:type="ST">На умеренную боль в правой кисти.</value>
+								</observation>
+							</entryRelationship>
+							<!-- [0..1] Описание результатов посещения: Объективные данные -->
+							<entryRelationship typeCode="REFR" inversionInd="false">
+								<observation classCode="OBS" moodCode="INT">
+									<!-- [0..1] Описание результатов посещения: Объективные данные -->
+									<code code="836" codeSystem="1.2.643.5.1.13.13.11.1380" codeSystemVersion="1.1" codeSystemName="Кодируемые поля CDA документов" displayName="Объективные данные"/>
+									<!-- R [1..1] Объективные данные -->
+									<value xsi:type="ST">Без изменений.</value>
+								</observation>
+							</entryRelationship>
+							<!-- [0..1] Описание результатов посещения: Кодирование рекомендаций -->
+							<entryRelationship typeCode="REFR" inversionInd="false">
+								<observation classCode="OBS" moodCode="INT">
+									<!-- R [1..1] Раздел описания результатов посещения -->
+									<code code="839" codeSystem="1.2.643.5.1.13.13.11.1380" codeSystemVersion="1.1" codeSystemName="Кодируемые поля CDA документов" displayName="Рекомендовано"/>
+									<!-- R [1..1] Рекомендации -->
+									<value xsi:type="ST">Иммуногистохимическое исследование материала.</value>
+								</observation>
+							</entryRelationship>
+						</encounter>
+					</entry>
+					<!-- [0..*] Кодирование посещений -->
+					<entry>
+						<!-- R [1..1] Посещение -->
+						<encounter classCode="ENC" moodCode="EVN">
+							<!-- R [1..1] Дата посещения -->
+							<effectiveTime>
+								<!-- R [1..1] Дата начала посещения -->
+								<low value="201610100909+0300"/>
+								<!-- R [1..1] Дата окончания посещения -->
+								<high value="201610100949+0300"/>
+							</effectiveTime>
+							<!-- R [1..*] Кодирование оказанных услуг -->
+							<entryRelationship typeCode="REFR" inversionInd="false">
+								<act classCode="ACT" moodCode="EVN">
+									<!-- R [1..1] Оказанная услуга -->
+									<code code="B01.057.002" codeSystem="1.2.643.5.1.13.13.11.1070" codeSystemVersion="2.2" codeSystemName="Номенклатура медицинских услуг" displayName="Прием (осмотр, консультация) врача-хирурга повторный"/>
+									<!-- R [1..1] Дата и время оказания услуги -->
+									<effectiveTime value="201610100909+0300"/>
+								</act>
+							</entryRelationship>
+							<!-- [0..1] Описание результатов посещения: Кодирование жалоб -->
+							<entryRelationship typeCode="REFR" inversionInd="false">
+								<observation classCode="OBS" moodCode="INT">
+									<!-- R [1..1] Раздел описания результатов посещения -->
+									<code code="835" codeSystem="1.2.643.5.1.13.13.11.1380" codeSystemVersion="1.1" codeSystemName="Кодируемые поля CDA документов" displayName="Жалобы пациента"/>
+									<!-- R [1..1] Жалобы -->
+									<value xsi:type="ST">Отсутствуют.</value>
+								</observation>
+							</entryRelationship>
+							<!-- [0..1] Описание результатов посещения: Объективные данные -->
+							<entryRelationship typeCode="REFR" inversionInd="false">
+								<observation classCode="OBS" moodCode="INT">
+									<!-- R [1..1] Раздел описания результатов посещения -->
+									<code code="836" codeSystem="1.2.643.5.1.13.13.11.1380" codeSystemVersion="1.1" codeSystemName="Кодируемые поля CDA документов" displayName="Объективные данные"/>
+									<!-- R [1..1] Объективные данные-->
+									<value xsi:type="ST">Признаков перифокального воспаления нет.</value>
+								</observation>
+							</entryRelationship>
+							<!-- [0..1] Описание результатов посещения: Кодирование рекомендаций -->
+							<entryRelationship typeCode="REFR" inversionInd="false">
+								<observation classCode="OBS" moodCode="INT">
+									<!-- R [1..1] Раздел описания результатов посещения -->
+									<code code="839" codeSystem="1.2.643.5.1.13.13.11.1380" codeSystemVersion="1.1" codeSystemName="Кодируемые поля CDA документов" displayName="Рекомендовано"/>
+									<!-- R [1..1] Рекомендации -->
+									<value xsi:type="ST">Санаторно-курортное лечение.</value>
+								</observation>
+							</entryRelationship>
+						</encounter>
+					</entry>
+				</section>
+			</component>
+			<!-- [0..1] СЕКЦИЯ: Патологические реакции (с кодированными элементами) -->
+			<component>
+				<section>
+					<!-- R [1..1] код секции -->
+					<code code="ALL" codeSystem="1.2.643.5.1.13.13.11.1379" codeSystemVersion="1.2" codeSystemName="Секции CDA документов" displayName="Аллергии и непереносимость"/>
+					<!-- R [1..1] заголовок секции -->
+					<title>ПАТОЛОГИЧЕСКИЕ РЕАКЦИИ</title>
+					<!-- R [1..1] наполнение секции -->
+					<text>
+						<table width="100%">
+							<col width="10%"/>
+							<col width="10%"/>
+							<col width="20%"/>
+							<col width="20%"/>
+							<col width="30%"/>
+							<tbody>
+								<tr>
+									<th>Дата выявления</th>
+									<th>Тип агента</th>
+									<th>МНН/Агент</th>
+									<th>Тип реакции</th>
+									<th>Комментарии</th>
+								</tr>
+								<tr>
+									<td>08.08.2016</td>
+									<td>медикамент</td>
+									<td>
+										<content ID="allc1">Ампициллин</content>
+									</td>
+									<td>Крапивница<br/>(<content ID="allr1">Лекарственная аллергия</content>)</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<td>02.10.2016</td>
+									<td>не медикамент</td>
+									<td>
+										<content ID="allc2">Домашняя пыль</content>
+									</td>
+									<td>Ринит<br/>(<content ID="allr2">Другие аллергии</content>)</td>
+									<td>-</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<!-- [0..*] кодирование патологической реакции (на Медикамент) -->
+						<observation classCode="OBS" moodCode="EVN">
+							<!-- R [1..1] Тип реакции -->
+							<code code="21" codeSystem="1.2.643.5.1.13.13.11.1064" codeSystemVersion="1.2" codeSystemName="Тип патологической реакции для сбора аллергоанамнеза" displayName="Лекарственная аллергия"/>
+							<!-- [0..1] Комментарии -->
+							<text>-</text>
+							<!-- R [1..1] Дата выявления -->
+							<effectiveTime value="20160808"/>
+							<!-- R [1..1] Кодирование МНН -->
+							<participant typeCode="IND">
+								<participantRole classCode="MANU">
+									<playingEntity classCode="MMAT">
+										<!-- R [1..1] МНН -->
+										<code code="205" codeSystem="1.2.643.5.1.13.13.11.1367" codeSystemVersion="2.1" codeSystemName="Действующие вещества лекарственных препаратов" displayName="Ампициллин">
+											<!-- [0..1] Ссылка на фрагмент текстовой части секции -->
+											<originalText>
+												<reference value="#allc1"/>
+											</originalText>
+										</code>
+										<name/>
+									</playingEntity>
+								</participantRole>
+							</participant>
+							<!-- R [1..1] Кодирование реакции -->
+							<entryRelationship typeCode="MFST">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- R [1..1] Реакция -->
+									<code code="7" codeSystem="1.2.643.5.1.13.13.11.1063" codeSystemVersion="1.2" codeSystemName="Основные клинические проявления патологических реакций для сбора аллергоанамнеза" displayName="Крапивница">
+										<!-- [0..1] Ссылка на фрагмент текстовой части секции -->
+										<originalText>
+											<reference value="#allr1"/>
+										</originalText>
+									</code>
+								</observation>
+							</entryRelationship>
+						</observation>
+					</entry>
+					<entry>
+						<!-- [0..*] кодирование патологической реакции (на НЕ медикамент) -->
+						<observation classCode="OBS" moodCode="EVN">
+							<!-- R [1..1] Тип реакции -->
+							<code code="24" codeSystem="1.2.643.5.1.13.13.11.1064" codeSystemVersion="1.2" codeSystemName="Тип патологической реакции для сбора аллергоанамнеза" displayName="Другие аллергии"/>
+							<!-- R [1..1] Комментарии -->
+							<text>-</text>
+							<!-- R [1..1] Дата выявления -->
+							<effectiveTime value="20161002"/>
+							<!-- R [1..1] Кодирование агента -->
+							<participant typeCode="IND">
+								<participantRole classCode="SPEC">
+									<playingEntity classCode="MAT">
+										<!-- [1..1] Агент -->
+										<code nullFlavor="NA">
+											<!-- [0..1] Ссылка на фрагмент текстовой части секции -->
+											<originalText>
+												<reference value="#allc2"/>
+											</originalText>
+										</code>
+										<!-- R [1..1] Описание агента -->
+										<desc>Домашняя пыль</desc>
+									</playingEntity>
+								</participantRole>
+							</participant>
+							<!-- R [1..1] Кодирование реакции -->
+							<entryRelationship typeCode="MFST">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- R [1..1] Реакция -->
+									<code code="10" codeSystem="1.2.643.5.1.13.13.11.1063" codeSystemVersion="1.2" codeSystemName="Основные клинические проявления патологических реакций для сбора аллергоанамнеза" displayName="Ринит">
+										<!-- [0..1] Ссылка на фрагмент текстовой части секции -->
+										<originalText>
+											<reference value="#allr2"/>
+										</originalText>
+									</code>
+								</observation>
+							</entryRelationship>
+						</observation>
+					</entry>
+				</section>
+			</component>
+			<!-- [0..1] СЕКЦИЯ: Витальные параметры (с кодированными элементами) -->
+			<component>
+				<section>
+					<!-- R [1..1] код секции -->
+					<code code="VITALPARAM" codeSystem="1.2.643.5.1.13.13.11.1379" codeSystemVersion="1.2" codeSystemName="Секции CDA документов" displayName="Витальные параметры"/>
+					<!-- R [1..1] заголовок секции -->
+					<title>ВИТАЛЬНЫЕ ПАРАМЕТРЫ</title>
+					<text>
+						<table width="33%">
+							<col width="90%"/>
+							<col width="5%"/>
+							<col width="5%"/>
+							<tbody>
+								<tr>
+									<th>Параметр</th>
+									<th>Ед.Изм</th>
+									<th>08.08.2016<br/>10:00</th>
+									<th>09.08.2016<br/>11:11</th>
+								</tr>
+								<tr>
+									<td>Артериальное давление</td>
+									<td>мм.рт.ст.</td>
+									<td>
+										<content ID="VIT_1">135</content> / <content ID="VIT_2">85</content>
+									</td>
+									<td>
+										<content ID="VIT_11">140</content> / <content ID="VIT_21">90</content>
+									</td>
+								</tr>
+								<tr>
+									<td>Частота сердечных сокращений</td>
+									<td>уд./мин</td>
+									<td>
+										<content ID="VIT_3">77</content>
+									</td>
+									<td>
+										<content ID="VIT_31">79</content>
+									</td>
+								</tr>
+								<tr>
+									<td>Частота дыхания</td>
+									<td>1/мин</td>
+									<td>
+										<content ID="VIT_4">23</content>
+									</td>
+									<td>
+										<content ID="VIT_41">25</content>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<!-- [0..*] Кодирование витальных параметров -->
+					<entry>
+						<organizer classCode="CLUSTER" moodCode="EVN">
+							<!-- R [1..1] Статус измерения - выполнено -->
+							<statusCode code="completed"/>
+							<!-- R [1..1] Дата измерения -->
+							<effectiveTime value="201608081010+0300"/>
+							<!-- R [1..2] Кодирование витального параметра -->
+							<component typeCode="COMP">
+								<!-- R [1..1] Кодирование систолического давления -->
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- R [1..1] Тип витального параметра -->
+									<code code="3" codeSystem="1.2.643.5.1.13.13.11.1010" codeSystemName="Витальные параметры" displayName="Артериальное давление систолическое">
+										<!-- [0..1] Ссылка на фрагмент текстовой части секции -->
+										<originalText>
+											<reference value="#VIT_1"/>
+										</originalText>
+									</code>
+									<!-- R [1..1] Систолическое давление -->
+									<value xsi:type="PQ" value="135" unit="мм.рт.ст."/>
+								</observation>
+							</component>
+							<!-- R [1..2] Кодирование витального параметра -->
+							<component typeCode="COMP">
+								<!--  R [1..1] Кодирование диастолического давленич -->
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- R [1..1] Тип витального параметра -->
+									<code code="2" codeSystem="1.2.643.5.1.13.13.11.1010" codeSystemName="Витальные параметры" displayName="Артериальное давление диастолическое">
+										<!-- [0..1] Ссылка на фрагмент текстовой части секции -->
+										<originalText>
+											<reference value="#VIT_2"/>
+										</originalText>
+									</code>
+									<!-- R [1..1] Диастолическое давление -->
+									<value xsi:type="PQ" value="85" unit="мм.рт.ст."/>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+					<!-- [0..*] Кодирование витальных параметров -->
+					<entry>
+						<organizer classCode="CLUSTER" moodCode="EVN">
+							<!-- R [1..1] Статус измерения - выполнено -->
+							<statusCode code="completed"/>
+							<!-- R [1..1] Дата измерения -->
+							<effectiveTime value="201608081111+0300"/>
+							<!-- R [1..2] Кодирование витального параметра -->
+							<component typeCode="COMP">
+								<!-- R [1..1] Кодирование частоты сердечных сокращений -->
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- R [1..1] Тип витального параметра -->
+									<code code="4" codeSystem="1.2.643.5.1.13.13.11.1010" codeSystemName="Витальные параметры" displayName="Частота сердечных сокращений">
+										<!-- [0..1] Ссылка на фрагмент текстовой части секции -->
+										<originalText>
+											<reference value="#VIT_3"/>
+										</originalText>
+									</code>
+									<!-- R [1..1] Частота сердечных сокращений -->
+									<value xsi:type="PQ" value="77" unit="уд./мин"/>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+					<!-- [0..*] Кодирование витальных параметров -->
+					<entry>
+						<organizer classCode="CLUSTER" moodCode="EVN">
+							<!-- R [1..1] Статус измерения - выполнено -->
+							<statusCode code="completed"/>
+							<!-- R [1..1] Дата измерения -->
+							<effectiveTime value="201608081212+0300"/>
+							<!-- R [1..2] Кодирование витального параметра -->
+							<component typeCode="COMP">
+								<!-- R [1..1] Кодирование частоты дыхания -->
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- R [1..1] Тип витального параметра -->
+									<code code="7" codeSystem="1.2.643.5.1.13.13.11.1010" codeSystemName="Витальные параметры" displayName="Частота дыхания">
+										<!-- [0..1] Ссылка на фрагмент текстовой части секции -->
+										<originalText>
+											<reference value="#VIT_4"/>
+										</originalText>
+									</code>
+									<!-- R [1..1] Частота дыхания -->
+									<value xsi:type="PQ" value="23" unit="1/мин"/>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+				</section>
+			</component>
+			<!-- [0..1] СЕКЦИЯ: Диагностические исследования и консультации (с кодированными элементами) -->
+			<component>
+				<section>
+					<!-- R [1..1] код секции -->
+					<code code="PROC" codeSystem="1.2.643.5.1.13.13.11.1379" codeSystemVersion="1.2" codeSystemName="Секции CDA документов" displayName="Исследования и процедуры"/>
+					<!-- R [1..1] заголовок секции -->
+					<title>ДИАГНОСТИЧЕСКИЕ ИССЛЕДОВАНИЯ И КОНСУЛЬТАЦИИ</title>
+					<!-- [0..1] СЕКЦИЯ: Результаты  инструментальных исследований (с кодированными элементами) -->
+					<component>
+						<section>
+							<!-- R [1..1] код секции -->
+							<code code="RESINSTR" codeSystem="1.2.643.5.1.13.13.11.1379" codeSystemVersion="1.2" codeSystemName="Секции CDA документов" displayName="Результаты инструментальных исследований"/>
+							<!-- R [1..1] заголовок секции -->
+							<title>Результаты инструментальных исследований</title>
+							<!-- [1..1] наполнение секции -->
+							<text>
+								<table width="100%">
+									<col width="5%"/>
+									<col width="15%"/>
+									<col width="70%"/>
+									<col width="10%"/>
+									<tbody>
+										<tr>
+											<th>Дата</th>
+											<th>Исследование</th>
+											<th>Результаты</th>
+											<th>Исполнитель</th>
+										</tr>
+										<tr>
+											<td>20.08.2016<br/>08:08</td>
+											<td>ХМ-ЭКГ</td>
+											<td>Длительность (час.): 18:34.Каналы – 3.Всего зарегистрировано комплексов: 60205<br/>1/. Ритм синусовый со средней ЧСС 53 в мин. (макс. ЧСС 92 в мин. 2:56; мин. ЧСС 42 в мин. 0:03 - сон).<br/>2/. За время исследования больного паузы продолжительностью больше 2.0 сек. не зафиксированы. Максимальный RR 1.86 сек. (1:50).<br/>3/. На протяжении исследования отмечалась А-В блокада II cтепени с PQ 0.26-0.28 сек.</td>
+											<td>Врач функциональной диагностики<br/>Дауров Р.Б.</td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+							<!-- [0..*] Кодирование инстументального исследования (ХМ-ЭКГ) -->
+							<entry>
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- R [1..1]  Тип инструментального исследования -->
+									<code code="50" displayName="ЭКГ" codeSystem="1.2.643.5.1.13.13.11.1378"  codeSystemVersion="1.1" codeSystemName="Справочник типов инструментальных исследований"/>
+									<!-- R [1..1]  Статус инструментального исследования -->
+									<statusCode code="completed"/>
+									<!-- R [1..1]  Время выполения инструментального исследования -->
+									<effectiveTime value="201608200808+0300"/>
+									<!-- R [1..1]  Приоритет инструментального исследования -->
+									<priorityCode code="0" displayName="Низкий приоритет" codeSystem="1.2.643.5.1.13.13.11.1377" codeSystemVersion="1.1" codeSystemName="Справочник приоритетов"/>
+									<!-- [1..1] текст результатов и\или заключения -->
+									<value xsi:type="ST">Результаты и\или заключение</value>
+									<!-- R [1..1] исполнитель (роль) -->
+									
+									<!-- R [1..*] Кодирование медицинской услуги -->
+									<entryRelationship typeCode="REFR" inversionInd="false">
+										<act classCode="ACT" moodCode="EVN">
+											<!-- R [1..1] Оказанная услуга -->
+											<code code="A05.10.008.001" displayName="Холтеровское мониторирование сердечного ритма (ХМ-ЭКГ)" codeSystem="1.2.643.5.1.13.13.11.1070" codeSystemVersion="2.2" codeSystemName="Номенклатура медицинских услуг"/>
+											<!-- R [1..1] Дата и время оказания услуги -->
+											<effectiveTime value="201405151430"/>
+										</act>
+									</entryRelationship>
+									<!-- [0..1] Ссылка на исходный документ-исследование -->
+									<reference typeCode="REFR">
+										<externalDocument>
+											<id root="1.2.643.5.1.13.13.12.2.77.7973.100.1.1.51" extension="8754871"/>
+										</externalDocument>
+									</reference>
+								</observation>
+							</entry>
+						</section>
+					</component>
+					<!-- [0..1] СЕКЦИЯ: Результаты лабораторных исследований (с кодированными элементами) -->
+					<component>
+						<section>
+							<!-- R [1..1] код секции -->
+							<code code="RESLAB" codeSystem="1.2.643.5.1.13.13.11.1379" codeSystemVersion="1.2" codeSystemName="Секции CDA документов" displayName="Результаты лабораторных исследований"/>
+							<!-- R [1..1] заголовок секции -->
+							<title>Результаты лабораторных исследований</title>
+							<!-- [1..1] наполнение секции -->
+							<text>
+								<table width="100%">
+									<col width="22%"/>
+									<col width="13%"/>
+									<col width="10%"/>
+									<col width="15%"/>
+									<col width="12%"/>
+									<col width="8%"/>
+									<col width="17%"/>
+									<thead>
+										<tr>
+											<th>Показатель</th>
+											<th>Значение</th>
+											<th>Единицы измерения</th>
+											<th>Референтный диапазон</th>
+											<th>Оборудование</th>
+											<th>Дата</th>
+											<th>Исполнитель</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="7">
+												<content styleCode="Bold">Анализ крови на анализаторе</content>
+											</td>
+										</tr>
+										<tr>
+											<td>Гемоглобин</td>
+											<td>166</td>
+											<td>г/л</td>
+											<td>120 - 150</td>
+											<td>Sysmex KX21</td>
+											<td>02.09.2016 11:11</td>
+											<td>врач КЛД</td>
+										</tr>
+										<tr>
+											<td>Шизоциты</td>
+											<td>++</td>
+											<td/>
+											<td>не обнаруживаются </td>
+											<td>Sysmex KX21</td>
+											<td>02.09.2016 11:11</td>
+											<td>врач КЛД</td>
+										</tr>
+										<tr>
+											<td colspan="5">
+												<content styleCode="Italics">Примечание: обнаружение шизоцитов требует дополнительных микроскопических исследований</content>
+											</td>
+											<td>02.09.2016 11:11</td>
+											<td>врач КЛД</td>
+										</tr>
+										<tr>
+											<td colspan="8">
+												<content styleCode="Bold">Заключение:</content>
+												<br/>Идиопатическая эритроцитемия. Кровянная химера не выявлена.
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<br/>
+								<table width="100%">
+									<col width="22%"/>
+									<col width="13%"/>
+									<col width="10%"/>
+									<col width="15%"/>
+									<col width="12%"/>
+									<col width="8%"/>
+									<col width="17%"/>
+									<thead>
+										<tr>
+											<th>Показатель</th>
+											<th>Значение</th>
+											<th>Единицы измерения</th>
+											<th>Референтный диапазон</th>
+											<th>Оборудование</th>
+											<th>Дата</th>
+											<th>Исполнитель</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="7">
+												<content styleCode="Bold">Иммуногематологическое исследование</content>
+											</td>
+										</tr>
+										<tr>
+											<td>Группа крови</td>
+											<td>B (III)</td>
+											<td/>
+											<td/>
+											<td>гелевые карты HEMOS SP</td>
+											<td>02.09.2016 12:12</td>
+											<td>врач КЛД Марин С.К.</td>
+										</tr>
+										<tr>
+											<td colspan="8">
+												<content styleCode="Bold">Заключение:</content>
+												<br/>Группа крови B (III)
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+							<!-- [0..*] Кодирование лабораторного исследования  -->
+							<entry>
+								<organizer classCode="CLUSTER" moodCode="EVN">
+									<!-- R [1..1] Кодирование статуса всего исследования -->
+									<statusCode code="completed"/>
+									<!-- [0..1] Ссылка на исходный документ-исследование -->
+									<reference typeCode="REFR">
+										<externalDocument>
+											<id root="1.2.643.5.1.13.13.12.2.77.7973.100.1.1.51" extension="8754869"/>
+										</externalDocument>
+									</reference>
+									<!-- R [1..*] Кодирование группы показателей лабораторного исследования  -->
+									<component>
+										<!-- R [1..1] Группа показателей -->
+										<organizer classCode="BATTERY" moodCode="EVN">
+											<!-- R [1..1] Указание произвольной группировки исследований -->
+											<code>
+												<originalText>Клинический анализ крови</originalText>
+											</code>
+											<!-- R [1..1] Кодирование статуса исследования группы показателей -->
+											<statusCode code="completed"/>
+											<!-- R [1..*] Кодирование лабораторного показателя (Гемоглобин)  -->
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<!-- R [1..1] Лабораторный показатель -->
+													<code code="1017128" codeSystem="1.2.643.5.1.13.13.11.1080" codeSystemVersion="3.6" codeSystemName="Федеральный справочник лабораторных исследований. Справочник лабораторных тестов" displayName="Гемоглобин общий, массовая концентрация в крови"/>
+													<!-- R [1..1] Кодирование статуса исследования показателя -->
+													<statusCode code="completed"/>
+													<!-- R [1..1]  Время выполнения исследования показателя -->
+													<effectiveTime value="201609021111+0300"/>													
+													<!-- [1..1] Кодирование результата -->
+													<value xsi:type="PQ" value="166" unit="г/л"/>
+													<!-- [1..1] Код интерпретации результата - выше нормы -->
+													<interpretationCode code="H"/>
+													<!-- R [1..1] Кодирование материала исследования -->
+													<specimen>
+														<specimenRole>
+															<!-- R [1..1] Идентификатор материала исследования -->
+															<id root="1.2.643.5.1.13.13.12.2.77.7973.100.1.1.66" extension="124562156"/>
+															<specimenPlayingEntity classCode="ENT" determinerCode="INSTANCE">
+																<!-- R [1..1] Материал исследования -->
+																<code code="108" codeSystem="1.2.643.5.1.13.13.11.1081" codeSystemVersion="1.1" codeSystemName="ФСЛИ. Справочник материалов для проведения лабораторного исследования" displayName="Кровь венозная"/>
+																<!-- R [1..1] Количество материала исследования -->
+																<quantity value="6.5" unit="мл"/>
+																<!-- R [1..1] Описание материала исследования -->
+																<desc>Кровь венозная</desc>
+															</specimenPlayingEntity>
+														</specimenRole>
+													</specimen>
+													<!-- [0..1] Кодирование референтного интервала -->
+													<referenceRange>
+														<observationRange>
+															<!-- R [1..1] Описание референтного интервала -->
+															<text>120 - 150 г/л</text>
+															<!-- R [1..1] Референтный интервал -->
+															<value xsi:type="IVL_PQ">
+																<low value="120" unit="г/л"/>
+																<high value="150" unit="г/л"/>
+															</value>
+															<!-- R [1..1] Код типа референтного интервала -->
+															<interpretationCode code="N"/>
+														</observationRange>
+													</referenceRange>
+												</observation>
+											</component>
+											<!-- [0..1] Примечание к результату исследования -->
+											<component>
+												<act classCode="ACT" moodCode="EVN">
+													<code code="900" codeSystem="1.2.643.5.1.13.13.11.1380" codeSystemVersion="1.1" codeSystemName="Кодируемые поля CDA документов" displayName="Текстовое примечание к лабораторному исследованию"/>
+													<text>Примечание: обнаружение шизоцитов требует дополнительных микроскопических исследований</text>
+												</act>
+											</component>
+										</organizer>
+									</component>
+									<!-- [0..1] Кодирование общего заключения по проведенным исследованиям  -->
+									<component>
+										<act classCode="ACT" moodCode="EVN">
+											<code code="901" codeSystem="1.2.643.5.1.13.13.11.1380" codeSystemVersion="1.1" codeSystemName="Кодируемые поля CDA документов" displayName="Текстовое заключение по проведенным лабораторным исследованиям"/>
+											<text>Идиопатическая эритроцитимия. Кровянная химера не выявлена.</text>
+										</act>
+									</component>									
+								</organizer>
+							</entry>
+							<!-- [0..*] Кодирование лабораторного исследования  -->
+							<entry>
+								<organizer classCode="CLUSTER" moodCode="EVN">
+									<!-- R [1..1] Кодирование статуса всего исследования -->
+									<statusCode code="completed"/>
+									<!-- [0..1] Ссылка на исходный документ-исследование -->
+									<reference typeCode="REFR">
+										<externalDocument>
+											<id root="1.2.643.5.1.13.13.12.2.77.7973.100.1.1.51" extension="8754870"/>
+										</externalDocument>
+									</reference>									
+									<!-- R [1..*] Кодирование группы показателей лабораторного исследования  -->
+									<component>
+										<organizer classCode="BATTERY" moodCode="EVN">
+											<!-- R [1..1] Указание произвольной группировки исследований -->
+											<code>
+												<originalText>Иммуногематологическое исследование</originalText>
+											</code>
+											<!-- R [1..1] Кодирование статуса исследования группы показателей -->
+											<statusCode code="completed"/>
+											<!-- R [1..*] Кодирование лабораторного показателя (группа крови)  -->
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<!-- R [1..1] Лабораторный показатель -->
+													<code code="1038629" codeSystem="1.2.643.5.1.13.13.11.1080" codeSystemVersion="3.6" codeSystemName="Федеральный справочник лабораторных исследований. Справочник лабораторных тестов" displayName="Группа крови AB0 подтверждающим методом"/>
+													<!-- R [1..1] Кодирование статуса исследования показателя -->
+													<statusCode code="completed"/>
+													<!-- R [1..1]  Время выполнения лабораторного исследования показателя -->
+													<effectiveTime value="201609021212+0300"/>
+													<!-- [1..1] Кодирование результата -->
+													<value xsi:type="CD" code="103" codeSystem="1.2.643.5.1.13.13.11.1061" codeSystemVersion="1.2" codeSystemName="Группы крови для учета сигнальной информации о пациенте" displayName="B (III)"/>
+													<!-- [1..1] Код интерпретации результата -->
+													<interpretationCode nullFlavor="NA"/>
+													<!-- R [1..1] Кодирование материала исследования -->
+													<specimen>
+														<specimenRole>
+															<!-- R [1..1] Идентификатор материала исследования -->
+															<id root="1.2.643.5.1.13.13.12.2.77.7973.100.1.1.66" extension="124562156"/>
+															<specimenPlayingEntity classCode="ENT" determinerCode="INSTANCE">
+																<!-- R [1..1] Материал исследования -->
+																<code code="108" codeSystem="1.2.643.5.1.13.13.11.1081" codeSystemVersion="1.1" codeSystemName="ФСЛИ. Справочник материалов для проведения лабораторного исследования" displayName="Кровь венозная"/>
+																<!-- R [1..1] Количество материала исследования -->
+																<quantity value="6.5" unit="мл"/>
+																<!-- R [1..1] Описание материала исследования -->
+																<desc>Кровь венозная</desc>
+															</specimenPlayingEntity>
+														</specimenRole>
+													</specimen>
+													<!-- R [1..*] Информация об использованном оборудовании и расходных материалах-->
+													<participant typeCode="CSM">
+														<!-- для реактивов CSM-->
+														<participantRole classCode="ROL">
+															<id root="1.2.643.5.1.13.13.12.2.77.7973.100.1.1.67" extension="9874"/>
+															<!-- использованный реактив -->
+															<playingDevice>
+																<manufacturerModelName>Гелевые карты для иммуногематологических исследований HEMOS SP</manufacturerModelName>
+															</playingDevice>
+														</participantRole>
+													</participant>
+													<!-- [0..1] Кодирование референтного интервала -->
+												</observation>
+											</component>
+											<!-- [0..1] Примечание к результату исследования -->
+										</organizer>
+									</component>
+									<!-- [0..1] Кодирование общего заключения по проведенным исследованиям  -->
+									<component>
+										<act classCode="ACT" moodCode="EVN">
+											<code code="901" codeSystem="1.2.643.5.1.13.13.11.1380" codeSystemVersion="1.1" codeSystemName="Кодируемые поля CDA документов" displayName="Текстовое заключение по проведенным лабораторным исследованиям"/>
+											<text>Группа крови B (III)</text>
+										</act>
+									</component>	
+								</organizer>
+							</entry>
+						</section>
+					</component>
+					<!-- [0..1] СЕКЦИЯ: Результаты морфологических исследований (с кодированными элементами) -->
+					<component>
+						<section>
+							<!-- R [1..1] код секции -->
+							<code code="RESMOR" codeSystem="1.2.643.5.1.13.13.11.1379" codeSystemVersion="1.2" codeSystemName="Секции CDA документов" displayName="Результаты морфологических исследований"/>
+							<!-- R [1..1] заголовок секции -->
+							<title>Результаты морфологических исследований</title>
+							<!-- [1..1] наполнение секции -->
+							<text>
+								<table width="100%">
+									<col width="5%"/>
+									<col width="15%"/>
+									<col width="70%"/>
+									<col width="10%"/>
+									<tbody>
+										<tr>
+											<th>Дата</th>
+											<th>Исследование</th>
+											<th>Результаты</th>
+											<th>Исполнитель</th>
+										</tr>
+										<tr>
+											<td>06.10.2016<br/>12:00</td>
+											<td>Иммуногистохимического исследования № 14/4-1755</td>
+											<td>Иммунофенотип опухоли не противоречит иммунофенотипу фибромиксоидной саркомы низкой степени злокачественности.</td>
+											<td>Врач-патологоанатом</td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+							<!-- [0..*] кодирование морфологического исследования (ИГХ) -->
+							<entry>
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- [1..1]  Тип морфологического исследования -->
+									<code nullFlavor="NA"/>
+									<!-- R [1..1]  Статус морфологического исследования -->
+									<statusCode code="completed"/>
+									<!-- R [1..1]  Время выполнения морфологического исследования -->
+									<effectiveTime value="201610061200+0300"/>
+									<!-- R [1..1]  Приоритет морфологического исследования -->
+									<priorityCode code="0" displayName="Низкий приоритет" codeSystem="1.2.643.5.1.13.13.11.1377" codeSystemVersion="1.1" codeSystemName="Справочник приоритетов"/>
+									<!-- [1..1] текст результатов и\или заключения -->
+									<value xsi:type="ST">Результаты и\или заключение</value>
+									<!-- R [1..1] исполнитель (роль) -->
+									<!-- R [1..*] Кодирование медицинской услуги -->
+									<entryRelationship typeCode="REFR" inversionInd="false">
+										<act classCode="ACT" moodCode="EVN">
+											<!-- R [1..1] Оказанная услуга -->
+											<code code="A08.30.013" displayName="Иммуногистохимическое исследование материала" codeSystem="1.2.643.5.1.13.13.11.1070" codeSystemVersion="2.2" codeSystemName="Номенклатура медицинских услуг"/>
+											<!-- R [1..1] Дата и время оказания услуги -->
+											<effectiveTime value="201610061200+0300"/>
+										</act>
+									</entryRelationship>
+									<!-- [0..1] Ссылка на исходный документ-исследование -->
+									<reference typeCode="REFR">
+										<externalDocument>
+											<id root="1.2.643.5.1.13.13.12.2.77.7973.100.1.1.51" extension="8754862"/>
+										</externalDocument>
+									</reference>
+								</observation>
+							</entry>
+						</section>
+					</component>
+					<!-- [0..1] СЕКЦИЯ: Консультации врачей специалистов (с кодированными элементами) -->
+					<component>
+						<section>
+							<!-- R [1..1] код секции -->
+							<code code="RESCONS" codeSystem="1.2.643.5.1.13.13.11.1379" codeSystemVersion="1.2" codeSystemName="Секции CDA документов" displayName="Консультации врачей специалистов"/>
+							<!-- R [1..1] заголовок секции -->
+							<title>Консультации врачей специалистов</title>
+							<!-- [1..1] наполнение секции -->
+							<text>
+								<table width="100%">
+									<col width="5%"/>
+									<col width="15%"/>
+									<col width="70%"/>
+									<col width="10%"/>
+									<tbody>
+										<tr>
+											<th>Дата</th>
+											<th>Исследование</th>
+											<th>Результаты</th>
+											<th>Исполнитель</th>
+										</tr>
+										<tr>
+											<td>03.09.2016<br/>14:14</td>
+											<td>Онколог</td>
+											<td>
+												<paragraph>
+													<caption>Состояние</caption>
+													<content ID="RES_11">Удовлетворительное</content>
+												</paragraph>
+												<paragraph>
+													<caption>Протокол</caption>
+													<content ID="RES_21">Опухолевидного образования в мягких тканях правого плеча.Данное образование обнаружил у себя 3 месяца назад. В связи с активным ростом новообразования обратилась к онкологу по месту жительства. На коже пальпируется плотное новообразование до 3см в диаметре, безболезненное, бугристое, Кожа вокруг не изменена.</content>
+												</paragraph>
+												<paragraph>
+													<caption>Заключение</caption>
+													<content ID="RES_31">На коже пальпируется плотное новообразование до 3см в диаметре.</content>
+												</paragraph>
+												<paragraph>
+													<caption>Рекомендации</caption>
+													<content ID="RES_41">Рекомендовано: проведение морфологического исследования.</content>
+												</paragraph>
+												<paragraph>
+													<caption>Выявленные патологии</caption>
+													<content ID="RES_51">R22 Локализованное выбухание, уплотнение или припухлость кожи и подкожной клетчатки</content>
+												</paragraph>
+												<paragraph>
+													<caption>Результат консультации</caption>
+													<content ID="RES_71">На диагностическое исследование</content>
+												</paragraph>
+											</td>
+											<td>Врач-онколог</td>
+										</tr>
+										<tr>
+											<td>07.10.2016<br/>07:07</td>
+											<td>Кардиолог</td>
+											<td>
+												<paragraph>
+													<caption>Состояние</caption>
+													<content ID="RES_12">Удовлетворительное</content>
+												</paragraph>
+												<paragraph>
+													<caption>Протокол</caption>
+													<content ID="RES_22">Состояние удовлетворительное. Сознание ясное. Контакт доступен. Кожные покровы и видимые слизистые обычной окраски, достаточной влажности. Кожные высыпания. Питание:повыш. Щитовидная железа пальпаторно не определяется. Периферические лимфоузлы не увеличены. Костно-мышечная система без видимых изменений. Грудная клетка правильной формы. Голосовое дрожание не изменено. Перкуторно над легкими легочный звук. При аускультации в легких дыхание везикулярное, хрипов нет. При осмотре области сердца и крупных кровеносных сосудов б/о. Пальпаторно - верхушечный толчок в пятом межреберье; перкуторно: левая граница относительной тупости сердца по срединно-ключичной линии, правая – по правому краю грудины, верхняя – 3 ребро. При аускультации – тоны сердца достаточной звучности, ритм сердечных сокращений правильный, дефицита пульса нет.</content>
+												</paragraph>
+												<paragraph>
+													<caption>Рекомендации</caption>
+													<content ID="RES_42">Рекомендовано: продолжить прием бисопролола(конкор) 5 мг/сут, аторвастатина 20 мг/сут, кардиомагнила 75 мг на ночь.</content>
+												</paragraph>
+													<caption>Результат консультации</caption>
+													<content ID="RES_72">Направлен на плановую госпитализацию в стационар</content>
+												</paragraph>
+											</td>
+											<td>Врач-кардиолог</td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+							<!-- [0..*] Кодирование консультаций -->
+							<entry>
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- R [1..1] Тип консультации -->
+									<code code="118" displayName="Кардиология" codeSystem="1.2.643.5.1.13.13.11.1066" codeSystemVersion="4.1" codeSystemName="Номенклатура специальностей специалистов со средним, высшим и послевузовским медицинским и фармацевтическим образованием в сфере здравоохранения"/>
+									<!-- R [1..1] Статус консультации -->
+									<statusCode code="completed"/>
+									<!-- R [1..1] Время выполнения консультации -->
+									<effectiveTime value="201610070707+0300"/>
+									<!-- R [1..1] Приоритет консультации -->
+									<priorityCode code="0" displayName="Низкий приоритет" codeSystem="1.2.643.5.1.13.13.11.1377" codeSystemVersion="1.1" codeSystemName="Справочник приоритетов"/>
+									<!-- [1..1] Текст результатов и\или заключения -->
+									<value xsi:type="ST">На момент осмотра - жалоб нет, боли в области сердца и одышку отрицает. Последний раз ЭКГ делал три года назад - об аритмии нечего не знает и сам нарушений ритма не ощущает.</value>
+									<!-- R [1..*] Кодирование медицинской услуги -->
+									<entryRelationship typeCode="REFR" inversionInd="false">
+										<act classCode="ACT" moodCode="EVN">
+											<!-- R [1..1] Оказанная услуга -->
+											<code code="B01.015.001" displayName="Прием (осмотр, консультация) врача-кардиолога первичный" codeSystem="1.2.643.5.1.13.13.11.1070" codeSystemVersion="2.2" codeSystemName="Номенклатура медицинских услуг"/>
+											<!-- R [1..1] Дата и время оказания услуги -->
+											<effectiveTime value="201610070707+0300"/>
+										</act>
+									</entryRelationship>
+									<!-- R [1..1] кодирование ... Состояние пациента -->
+									<entryRelationship typeCode="COMP">
+										<observation classCode="OBS" moodCode="EVN">
+											<code code="1" codeSystem="1.2.643.5.1.13.13.11.1006" codeSystemVersion="2.1" codeSystemName="Степень тяжести состояния пациента" displayName="Удовлетворительное">
+												<!-- [0..1] Ссылка на фрагмент текстовой части секции -->
+												<originalText>
+													<reference value="#RES_12"/>
+												</originalText>
+											</code>
+										</observation>
+									</entryRelationship>
+									<!-- R [1..1] кодирование ... Протокол консультации -->
+									<entryRelationship typeCode="COMP">
+										<observation classCode="OBS" moodCode="EVN">
+											<code code="805" codeSystem="1.2.643.5.1.13.13.11.1380" codeSystemVersion="1.1" codeSystemName="Кодируемые поля CDA документов" displayName="Протокол консультации"/>
+											<!-- [0..1] Ссылка на фрагмент текстовой части секции -->
+											<text>
+												<reference value="#RES_22"/>
+											</text>
+											<value xsi:type="ST">Произвольный текст протокола</value>
+										</observation>
+									</entryRelationship>
+									<!-- [0..1] кодирование ... Рекомендации -->
+									<entryRelationship typeCode="COMP">
+										<observation classCode="OBS" moodCode="EVN">
+											<code code="807" codeSystem="1.2.643.5.1.13.13.11.1380" codeSystemVersion="1.1" codeSystemName="Кодируемые поля CDA документов" displayName="Рекомендации"/>
+											<!-- [0..1] Ссылка на фрагмент текстовой части секции -->
+											<text>
+												<reference value="#RES_42"/>
+											</text>
+											<value xsi:type="ST">Произвольный текст рекомендаций</value>
+										</observation>
+									</entryRelationship>
+									<!-- [0..1] кодирование ... Результат консультации -->
+									<entryRelationship typeCode="COMP">
+										<observation classCode="OBS" moodCode="EVN">
+											<code code="810" codeSystem="1.2.643.5.1.13.13.11.1380" codeSystemVersion="1.1" codeSystemName="Кодируемые поля CDA документов" displayName="Результат консультации">
+											</code>
+											<value xsi:type="CD" code="1" codeSystem="1.2.643.5.1.13.13.11.1009" codeSystemVersion="1.1" codeSystemName="Справочник видов медицинских направлений" displayName="На плановую госпитализацию">
+												<!-- [0..1] Ссылка на фрагмент текстовой части секции -->
+												<originalText>
+													<reference value="#RES_72"/>
+												</originalText>
+											</value>
+										</observation>
+									</entryRelationship>
+									<!-- [0..1] Ссылка на исходный документ-консультацию -->
+									<reference typeCode="REFR">
+										<externalDocument>
+											<id root="1.2.643.5.1.13.13.12.2.77.7973.100.1.1.51" extension="8754859"/>
+										</externalDocument>
+									</reference>
+								</observation>
+							</entry>
+						</section>
+					</component>
+				</section>
+			</component>
+			<!-- [0..1] СЕКЦИЯ: Вакцинация и иммунизация (с кодированными элементами) -->
+			<component>
+				<section>
+					<!-- R [1..1] код секции -->
+					<code code="IMM" codeSystem="1.2.643.5.1.13.13.11.1379" codeSystemVersion="1.2" codeSystemName="Секции CDA документов" displayName="Иммунизация"/>
+					<!-- R [1..1] заголовок секции -->
+					<title>ВАКЦИНАЦИЯ И ИММУНИЗАЦИЯ</title>
+					<!-- [1..1] наполнение секции -->
+					<text>
+						<table width="100%">
+							<col width="5%"/>
+							<col width="50%"/>
+							<col width="5%"/>
+							<col width="40%"/>
+							<tbody>
+								<tr>
+									<th>Дата</th>
+									<th>Препарат</th>
+									<th>Комментарий</th>
+								</tr>
+								<tr>
+									<td>02.10.2016</td>
+									<td>
+										<content ID="imm1">Вакцина коклюшно-дифтерийно-столбнячная адсорбированная жидкая с уменьшенным содержанием антигенов (АКДС-М-вакцина)</content>
+									</td>
+									<td>-</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<!-- [0..1] Кодирование вакцинации -->
+					<entry>
+						<substanceAdministration classCode="SBADM" moodCode="EVN">
+							<!-- [0..1] Комментарий -->
+							<text>-</text>
+							<!-- R [1..1] Дата вакцинации -->
+							<effectiveTime value="20161002"/>
+							<!-- R [1..1] Кодирование использованного препарата -->
+							<consumable typeCode="CSM">
+								<manufacturedProduct classCode="MANU">
+									<manufacturedMaterial classCode="MMAT" determinerCode="KIND">
+										<!-- R [1..1] Препарат -->
+										<code code="261" codeSystem="1.2.643.5.1.13.13.11.1078" codeSystemVersion="1.1" codeSystemName="Иммунобиологические препараты для специфической профилактики, диагностики и терапии" displayName="Вакцина коклюшно-дифтерийно-столбнячная адсорбированная жидкая с уменьшенным содержанием антигенов (АКДС-М-вакцина)">
+											<!-- [0..1] Ссылка на фрагмент текстовой части секции -->
+											<originalText>
+												<reference value="#imm1"/>
+											</originalText>
+										</code>
+									</manufacturedMaterial>
+								</manufacturedProduct>
+							</consumable>
+						</substanceAdministration>
+					</entry>
+				</section>
+			</component>
+			<!-- [0..1] СЕКЦИЯ: Проведенное лечение (без кодированных элементов) -->
+			<component>
+				<section>
+					<!-- R [1..1] код секции -->
+					<code code="SUM" codeSystem="1.2.643.5.1.13.13.11.1379" codeSystemVersion="1.2" codeSystemName="Секции CDA документов" displayName="Информация о лечении"/>
+					<!-- R [1..1] заголовок секции -->
+					<title>ПРОВЕДЕННОЕ ЛЕЧЕНИЕ</title>
+					<!-- [0..1] СЕКЦИЯ: Медикаменты (без кодированных элементов) -->
+					<component>
+						<section>
+							<!-- R [1..1] код секции -->
+							<code code="DRUG" codeSystem="1.2.643.5.1.13.13.11.1379" codeSystemVersion="1.2" codeSystemName="Секции CDA документов" displayName="Назначенные препараты"/>
+							<!-- R [1..1] заголовок секции -->
+							<title>Медикаментозное лечение</title>
+							<!-- [1..1] наполнение секции -->
+							<text>
+								<table width="100%">
+									<col width="55%"/>
+									<col width="20%"/>
+									<col width="25%"/>
+									<tbody>
+										<tr>
+											<th>МНН</th>
+											<th>Схема лечения</th>
+											<th>Период лечения</th>
+										</tr>
+										<tr>
+											<td>Ацетилсалициловая кислота</td>
+											<td>2 таб. в день</td>
+											<td>с 02 октября 2016<br/>по 03 октября 2016</td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+							<!-- [0..*] кодирование медикаментов -->
+							<entry>
+								<substanceAdministration classCode="SBADM" moodCode="EVN">
+									<consumable>
+										<manufacturedProduct>
+											<manufacturedLabeledDrug>
+												<!-- R [1..1] МНН -->
+												<code code="315" codeSystem="1.2.643.5.1.13.13.11.1367" codeSystemVersion="2.1" codeSystemName="Действующие вещества лекарственных препаратов" displayName="Ацетилсалициловая кислота"/>
+											</manufacturedLabeledDrug>
+										</manufacturedProduct>
+									</consumable>
+								</substanceAdministration>
+							</entry>
+						</section>
+					</component>
+					<!-- [0..1] СЕКЦИЯ: Немедикаментозное лечение (без кодированных элементов) -->
+					<component>
+						<section>
+							<!-- R [1..1] код секции -->
+							<code code="NONDRUG" codeSystem="1.2.643.5.1.13.13.11.1379" codeSystemVersion="1.2" codeSystemName="Секции CDA документов" displayName="Немедикаментозное лечение"/>
+							<!-- R [1..1] заголовок секции -->
+							<title>Немедикаментозное лечение</title>
+							<!-- [1..1] наполнение секции -->
+							<text>
+								<table width="100%">
+									<col width="55%"/>
+									<col width="20%"/>
+									<col width="25%"/>
+									<tbody>
+										<tr>
+											<th>Название</th>
+											<th>Схема лечения</th>
+											<th>Период лечения</th>
+										</tr>
+										<tr>
+											<td>Физиотерапия </td>
+											<td>1 раз в день</td>
+											<td>с 03 октября 2016<br/>по 05 октября 2016</td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+						</section>
+					</component>
+				</section>
+			</component>
+			<!-- [0..1] СЕКЦИЯ: Хирургические операции (с кодированными элементами) -->
+			<component>
+				<section>
+					<!-- R [1..1] код секции -->
+					<code code="SUR" codeSystem="1.2.643.5.1.13.13.11.1379" codeSystemVersion="1.2" codeSystemName="Секции CDA документов" displayName="Операции"/>
+					<!-- R [1..1] заголовок секции -->
+					<title>ХИРУРГИЧЕСКИЕ ВМЕШАТЕЛЬСТВА</title>
+					<!-- [1..1] наполнение секции -->
+					<text>
+						<table width="100%">
+							<col width="10%"/>
+							<col width="10%"/>
+							<col width="55%"/>
+							<col width="15%"/>
+							<col width="10%"/>
+							<tbody>
+								<tr>
+									<th>Дата</th>
+									<th>Код</th>
+									<th>Название</th>
+									<th>Вид анестезии</th>
+									<th>Хирург</th>
+								</tr>
+								<tr>
+									<td>02.10.2016<br/>14:10</td>
+									<td>A16.01.004</td>
+									<td>Хирургическая обработка раны или инфицированной ткани<br/>
+										<content styleCode="Italics">установлено:</content> Мешок дренажный раневый</td>
+									<td>Местная</td>
+									<td>Врач-хирург</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<!-- [0..*] кодирование операции -->
+					<entry>
+						<procedure classCode="PROC" moodCode="EVN">
+							<!-- [0..1] код операции -->
+							<code code="A16.01.004" displayName="Хирургическая обработка раны или инфицированной ткани" codeSystem="1.2.643.5.1.13.13.11.1070" codeSystemVersion="2.2" codeSystemName="Номенклатура медицинских услуг"/>
+							<!-- R [1..1] Текстовое описание операции -->
+							<text>Хирургическая обработка раны или инфицированной ткани</text>
+							<!-- R [1..1] Статус операции -->
+							<statusCode code="completed"/>
+							<!-- [0..1] Дата операции -->
+							<effectiveTime value="201610021410+0300"/>
+							<!-- [0..*] уточнение операции: использование аппаратуры -->
+							<participant typeCode="DEV">
+								<participantRole classCode="MNT">
+									<playingDevice>
+										<code code="2" codeSystem="1.2.643.5.1.13.13.11.1048" codeSystemVersion="1.1" codeSystemName="Учетные группы аппаратуры, используемой при операциях" displayName="Криогенная"/>
+									</playingDevice>
+								</participantRole>
+							</participant>
+							<!-- [0..*] уточнение операции: использование устройств и имплантов -->
+							<participant typeCode="DEV">
+								<participantRole classCode="MANU">
+									<playingDevice>
+										<code code="28" codeSystem="1.2.643.5.1.13.13.11.1079" codeSystemVersion="1.1" codeSystemName="Виды имплантируемых медицинских изделий и вспомогательных устройств для пациентов с ограниченными возможностями" displayName="Мешок дренажный раневый"/>
+									</playingDevice>
+								</participantRole>
+							</participant>
+							<!-- [0..1] уточнение операции: использованная анестезия -->
+							<entryRelationship typeCode="COMP">
+								<substanceAdministration classCode="SBADM" moodCode="EVN">
+									<consumable typeCode="CSM">
+										<manufacturedProduct classCode="MANU">
+											<manufacturedLabeledDrug>
+												<code code="2" codeSystem="1.2.643.5.1.13.13.11.1033" codeSystemVersion="3.1" codeSystemName="Виды анестезии" displayName="Местная"/>
+											</manufacturedLabeledDrug>
+										</manufacturedProduct>
+									</consumable>
+								</substanceAdministration>
+							</entryRelationship>
+							<!-- [0..1] Ссылка на исходный документ-протокол операции -->
+							<reference typeCode="REFR">
+								<externalDocument>
+									<id root="1.2.643.5.1.13.13.12.2.77.8481.100.1.1.51" extension="8754858"/>
+								</externalDocument>
+							</reference>
+						</procedure>
+					</entry>
+				</section>
+			</component>
+			<!-- [0..1] СЕКЦИЯ: Медицинские процедуры (с кодированными элементами) -->
+			<component>
+				<section>
+					<!-- R [1..1] код секции -->
+					<code code="PROCEDURE" codeSystem="1.2.643.5.1.13.13.11.1379" codeSystemVersion="1.2" codeSystemName="Секции CDA документов" displayName="Медицинские процедуры"/>
+					<!-- R [1..1] заголовок секции -->
+					<title>МЕДИЦИНСКИЕ ПРОЦЕДУРЫ</title>
+					<!-- [1..1] наполнение секции -->
+					<text>
+						<table width="100%">
+							<col width="10%"/>
+							<col width="10%"/>
+							<col width="55%"/>
+							<col width="15%"/>
+							<col width="10%"/>
+							<tbody>
+								<tr>
+									<th>Дата</th>
+									<th>Код</th>
+									<th>Название</th>
+									<th>Вид анестезии</th>
+									<th>Врач</th>
+								</tr>
+								<tr>
+									<td>02.10.2016<br/>14:10</td>
+									<td>A16.01.004</td>
+									<td>Установка медицинского изделия<br/>
+										<content styleCode="Italics">установлено:</content> Мешок дренажный раневый</td>
+									<td>Местная</td>
+									<td>Врач-хирург</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<!-- [0..*] кодирование процедуры -->
+					<entry>
+						<procedure classCode="PROC" moodCode="EVN">
+							<!-- [0..1] код процедуры -->
+							<code code="A11.01.012" displayName="Введение искусственных имплантатов в мягкие ткани" codeSystem="1.2.643.5.1.13.13.11.1070" codeSystemVersion="2.2" codeSystemName="Номенклатура медицинских услуг"/>
+							<!-- R [1..1] Текстовое описание процедуры -->
+							<text>Установка медицинского изделия: Мешок дренажный раневый</text>
+							<!-- R [1..1] Статус процедуры -->
+							<statusCode code="completed"/>
+							<!-- [0..1] дата операции -->
+							<effectiveTime value="201610021410+0300"/>
+							<!-- [0..*] уточнение операции: использование устройств и имплантов -->
+							<participant typeCode="DEV">
+								<participantRole classCode="MANU">
+									<playingDevice>
+										<code code="28" codeSystem="1.2.643.5.1.13.13.11.1079" codeSystemVersion="1.1" codeSystemName="Виды имплантируемых медицинских изделий и вспомогательных устройств для пациентов с ограниченными возможностями" displayName="Мешок дренажный раневый"/>
+									</playingDevice>
+								</participantRole>
+							</participant>
+							<!-- [0..1] уточнение операции: использованная анестезия -->
+							<entryRelationship typeCode="COMP">
+								<substanceAdministration classCode="SBADM" moodCode="EVN">
+									<consumable>
+										<manufacturedProduct>
+											<manufacturedLabeledDrug>
+												<code code="2" codeSystem="1.2.643.5.1.13.13.11.1033" codeSystemVersion="3.1" codeSystemName="Виды анестезии" displayName="Местная"/>
+											</manufacturedLabeledDrug>
+										</manufacturedProduct>
+									</consumable>
+								</substanceAdministration>
+							</entryRelationship>
+						</procedure>
+					</entry>
+				</section>
+			</component>
+			<!-- [0..1] СЕКЦИЯ: Оказанные услуги (с кодированными элементами) -->
+			<component>
+				<section>
+					<!-- R [1..1] код секции -->
+					<code code="SERVICES" codeSystem="1.2.643.5.1.13.13.11.1379" codeSystemVersion="1.2" codeSystemName="Секции CDA документов" displayName="Оказанные услуги"/>
+					<!-- R [1..1] заголовок секции -->
+					<title>МЕДИЦИНСКИЕ УСЛУГИ</title>
+					<!-- R [1..1] наполнение секции -->
+					<text>
+						<table width="100%">
+							<col width="10%"/>
+							<col width="80%"/>
+							<col width="10%"/>
+							<tbody>
+								<tr>
+									<th>Дата</th>
+									<th>Услуга</th>
+									<th>Код</th>
+								</tr>
+								<tr>
+									<td>20.08.2016</td>
+									<td>Холтеровское мониторирование сердечного ритма (ХМ-ЭКГ)</td>
+									<td>A05.10.008.001</td>
+								</tr>
+								<tr>
+									<td>02.09.2016</td>
+									<td>Общий (клинический) анализ крови</td>
+									<td>B03.016.002</td>
+								</tr>
+								<tr>
+									<td>02.09.2016</td>
+									<td>Определение основных групп крови (A, B, 0)</td>
+									<td>A12.05.005</td>
+								</tr>
+								<tr>
+									<td>02.09.2016</td>
+									<td>Определение подгруппы и других групп крови меньшего значения A-1, A-2, D, Cc, E, Kell, Duffy</td>
+									<td>A12.05.007</td>
+								</tr>
+								<tr>
+									<td>03.09.2016</td>
+									<td>Прием (осмотр, консультация) врача-онколога первичный</td>
+									<td>B01.027.001</td>
+								</tr>
+								<tr>
+									<td>02.10.2016</td>
+									<td>Хирургическая обработка раны или инфицированной ткани</td>
+									<td>A16.01.004</td>
+								</tr>
+								<tr>
+									<td>02.10.2016</td>
+									<td>Введение искусственных имплантатов в мягкие ткани</td>
+									<td>A11.01.012</td>
+								</tr>
+								<tr>
+									<td>06.10.2016</td>
+									<td>Иммуногистохимическое исследование материала</td>
+									<td>A08.30.013</td>
+								</tr>
+								<tr>
+									<td>07.10.2016</td>
+									<td>Прием (осмотр, консультация) врача-кардиолога первичный</td>
+									<td>B01.015.001</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<!-- R [1..*] Кодирование медицинской услуги -->
+					<entry>
+						<act classCode="ACT" moodCode="EVN">
+							<!-- R [1..1] Оказанная услуга -->
+							<code code="A05.10.008.001" displayName="Холтеровское мониторирование сердечного ритма (ХМ-ЭКГ)" codeSystem="1.2.643.5.1.13.13.11.1070" codeSystemVersion="2.2" codeSystemName="Номенклатура медицинских услуг"/>
+							<!-- R [1..1] Дата и время оказания услуги -->
+							<effectiveTime value="201608200808+0300"/>
+						</act>
+					</entry>
+					<!-- R [1..*] Кодирование медицинской услуги -->
+					<entry>
+						<act classCode="ACT" moodCode="EVN">
+							<!-- R [1..1] Оказанная услуга -->
+							<code code="B03.016.002" displayName="Общий (клинический) анализ крови" codeSystem="1.2.643.5.1.13.13.11.1070" codeSystemVersion="2.2" codeSystemName="Номенклатура медицинских услуг"/>
+							<!-- R [1..1] Дата и время оказания услуги -->
+							<effectiveTime value="201609021111+0300"/>
+						</act>
+					</entry>
+					<!-- R [1..*] Кодирование медицинской услуги -->
+					<entry>
+						<act classCode="ACT" moodCode="EVN">
+							<!-- R [1..1] Оказанная услуга -->
+							<code code="A12.05.005" displayName="Определение основных групп крови (A, B, 0)" codeSystem="1.2.643.5.1.13.13.11.1070" codeSystemVersion="2.2" codeSystemName="Номенклатура медицинских услуг"/>
+							<!-- R [1..1] Дата и время оказания услуги -->
+							<effectiveTime value="201609021212+0300"/>
+						</act>
+					</entry>
+					<entry>
+						<act classCode="ACT" moodCode="EVN">
+							<!-- R [1..1] Оказанная услуга -->
+							<code code="A12.05.007" displayName="Определение подгруппы и других групп крови меньшего значения A-1, A-2, D, Cc, E, Kell, Duffy" codeSystem="1.2.643.5.1.13.13.11.1070" codeSystemVersion="2.2" codeSystemName="Номенклатура медицинских услуг"/>
+							<!-- R [1..1] Дата и время оказания услуги -->
+							<effectiveTime value="201609021212+0300"/>
+						</act>
+					</entry>
+					<!-- R [1..*] Кодирование медицинской услуги -->
+					<entry>
+						<act classCode="ACT" moodCode="EVN">
+							<!-- R [1..1] Оказанная услуга -->
+							<code code="A08.30.013" displayName="Иммуногистохимическое исследование материала" codeSystem="1.2.643.5.1.13.13.11.1070" codeSystemVersion="2.2" codeSystemName="Номенклатура медицинских услуг"/>
+							<!-- R [1..1] Дата и время оказания услуги -->
+							<effectiveTime value="201610061200+0300"/>
+						</act>
+					</entry>
+					<!-- R [1..*] Кодирование медицинской услуги -->
+					<entry>
+						<act classCode="ACT" moodCode="EVN">
+							<!-- R [1..1] Оказанная услуга -->
+							<code code="B01.027.001" displayName="Прием (осмотр, консультация) врача-онколога первичный" codeSystem="1.2.643.5.1.13.13.11.1070" codeSystemVersion="2.2" codeSystemName="Номенклатура медицинских услуг"/>
+							<!-- R [1..1] Дата и время оказания услуги -->
+							<effectiveTime value="201609031414+0300"/>
+						</act>
+					</entry>
+					<!-- R [1..*] Кодирование медицинской услуги -->
+					<entry>
+						<act classCode="ACT" moodCode="EVN">
+							<!-- R [1..1] Оказанная услуга -->
+							<code code="B01.015.001" displayName="Прием (осмотр, консультация) врача-кардиолога первичный" codeSystem="1.2.643.5.1.13.13.11.1070" codeSystemVersion="2.2" codeSystemName="Номенклатура медицинских услуг"/>
+							<effectiveTime value="201610070707+0300"/>
+						</act>
+					</entry>
+					<!-- R [1..*] Кодирование медицинской услуги -->
+					<entry>
+						<act classCode="ACT" moodCode="EVN">
+							<!-- R [1..1] Оказанная услуга -->
+							<code code="A16.01.004" displayName="Хирургическая обработка раны или инфицированной ткани" codeSystem="1.2.643.5.1.13.13.11.1070" codeSystemVersion="2.2" codeSystemName="Номенклатура медицинских услуг"/>
+							<!-- R [1..1] Дата и время оказания услуги -->
+							<effectiveTime value="201610021410+0300"/>
+						</act>
+					</entry>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

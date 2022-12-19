@@ -1,0 +1,13 @@
+credentials:
+  usernames:
+    Ufifus:
+      email: artemnesteihyb@mail.ru
+      name: Artem
+      password: 1234 # To be replaced with hashed password
+cookie:
+  expiry_days: 30
+  key: some_signature_key
+  name: some_cookie_name
+preauthorized:
+  emails:
+  - melsby@gmail.com
