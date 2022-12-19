@@ -17,7 +17,7 @@ if __name__ == '__main__':
     #     st.warning('Please enter your username and password')
     # elif authentication_status:
     #     st.write('Welcome *%s*' % (name))
-        st.title('XML redactor')
+        st.title('XML-Editor for AIDoctor datasets')
         st.write('')
 
         xml_file = st.file_uploader('Choise file', accept_multiple_files=False)
